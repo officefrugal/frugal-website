@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Refund Policy – Frugal Consultancy Services Pvt Ltd</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0b2545; --accent: #1d4ed8; --sky: #3b82f6;
+      --text: #1a2640; --muted: #5a6a8a; --border: #d1dcf0;
+      --pale: #f0f6ff; --white: #ffffff; --green: #059669;
+      --font-heading: Georgia, Cambria, serif;
+      --font-body: 'Segoe UI', Tahoma, Geneva, Verdana, Arial, sans-serif;
+    }
+    body { font-family: var(--font-body); color: var(--text); background: var(--white); line-height: 1.7; }
+
+    nav {
+      background: var(--navy); padding: 18px 6vw;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 700; color: white; text-decoration: none; }
+    .nav-logo span { color: var(--sky); }
+    .nav-back { font-size: 0.85rem; color: rgba(255,255,255,0.6); text-decoration: none; transition: color .2s; }
+    .nav-back:hover { color: white; }
+
+    .hero {
+      background: linear-gradient(135deg, #064e3b, #065f46);
+      padding: 60px 6vw; text-align: center; color: white;
+    }
+    .hero-label { font-size: 0.72rem; font-weight: 700; color: #6ee7b7; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+    .hero h1 { font-family: var(--font-heading); font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 700; margin-bottom: 10px; }
+    .hero-meta { font-size: 0.85rem; color: rgba(255,255,255,0.5); }
+
+    .content { max-width: 820px; margin: 0 auto; padding: 60px 6vw; }
+
+    .intro-box {
+      background: #f0fdf4; border-left: 4px solid var(--green);
+      border-radius: 0 12px 12px 0; padding: 20px 24px; margin-bottom: 40px;
+      font-size: 0.92rem; color: var(--muted); line-height: 1.75;
+    }
+
+    .summary-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 40px;
+    }
+    .sg-card {
+      border-radius: 12px; padding: 20px; text-align: center; border: 1.5px solid var(--border);
+    }
+    .sg-card.green { background: #f0fdf4; border-color: #86efac; }
+    .sg-card.yellow { background: #fffbeb; border-color: #fcd34d; }
+    .sg-card.red { background: #fef2f2; border-color: #fca5a5; }
+    .sg-icon { font-size: 1.8rem; margin-bottom: 8px; }
+    .sg-title { font-size: 0.82rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .sg-desc { font-size: 0.75rem; color: var(--muted); line-height: 1.5; }
+
+    h2 {
+      font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700;
+      color: var(--navy); margin: 36px 0 12px; padding-bottom: 8px;
+      border-bottom: 1.5px solid var(--border);
+    }
+    p { font-size: 0.92rem; color: var(--muted); margin-bottom: 14px; line-height: 1.8; }
+    ul { margin: 10px 0 16px 20px; }
+    ul li { font-size: 0.92rem; color: var(--muted); margin-bottom: 7px; line-height: 1.7; }
+
+    .scenario-table {
+      width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 0.88rem;
+    }
+    .scenario-table th {
+      background: var(--navy); color: white; padding: 11px 14px;
+      text-align: left; font-weight: 600; font-size: 0.8rem;
+    }
+    .scenario-table td { padding: 11px 14px; border-bottom: 1px solid var(--border); color: var(--muted); }
+    .scenario-table tr:nth-child(even) td { background: var(--pale); }
+    .badge { display: inline-block; padding: 3px 9px; border-radius: 100px; font-size: 0.72rem; font-weight: 700; }
+    .badge.yes { background: #d1fae5; color: #065f46; }
+    .badge.partial { background: #fef9c3; color: #854d0e; }
+    .badge.no { background: #fee2e2; color: #991b1b; }
+
+    .process-steps { display: flex; flex-direction: column; gap: 14px; margin: 16px 0; }
+    .step { display: flex; gap: 14px; align-items: flex-start; }
+    .step-num {
+      width: 32px; height: 32px; border-radius: 50%; background: var(--navy); color: white;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.82rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;
+    }
+    .step-text h4 { font-size: 0.9rem; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
+    .step-text p { font-size: 0.85rem; margin-bottom: 0; }
+
+    .contact-box {
+      background: var(--navy); color: white; border-radius: 14px;
+      padding: 28px 30px; margin-top: 48px;
+    }
+    .contact-box h3 { font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 10px; }
+    .contact-box p { color: rgba(255,255,255,0.65); font-size: 0.88rem; margin-bottom: 6px; }
+    .contact-box a { color: var(--sky); text-decoration: none; }
+
+    footer {
+      background: var(--pale); text-align: center; padding: 24px;
+      font-size: 0.8rem; color: var(--muted); border-top: 1px solid var(--border);
+      margin-top: 60px;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    @media (max-width: 600px) { .summary-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html"><span>Frugal</span> Consultancy</a>
+  <a class="nav-back" href="index.html">← Back to Website</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-label">Legal</div>
+  <h1>Refund & Cancellation Policy</h1>
+  <div class="hero-meta">Last updated: July 2024 &nbsp;|&nbsp; Frugal Consultancy Services Pvt Ltd</div>
+</div>
+
+<div class="content">
+  <div class="intro-box">
+    At Frugal Consultancy Services Pvt Ltd, we are committed to delivering high-quality technology and marketing services. This policy outlines our approach to refunds, cancellations, and disputes, designed to be fair to both our clients and our team. Please read this carefully before engaging our services.
+  </div>
+
+  <div class="summary-grid">
+    <div class="sg-card green">
+      <div class="sg-icon">✅</div>
+      <div class="sg-title">Eligible for Refund</div>
+      <div class="sg-desc">Service not delivered, duplicate payment, or clear billing error</div>
+    </div>
+    <div class="sg-card yellow">
+      <div class="sg-icon">⚠️</div>
+      <div class="sg-title">Partial Refund</div>
+      <div class="sg-desc">Project cancelled mid-way; refund for unworked portion only</div>
+    </div>
+    <div class="sg-card red">
+      <div class="sg-icon">❌</div>
+      <div class="sg-title">Non-Refundable</div>
+      <div class="sg-desc">Completed deliverables, consulting hours used, or change of mind</div>
+    </div>
+  </div>
+
+  <h2>1. Nature of Our Services</h2>
+  <p>Frugal Consultancy Services Pvt Ltd provides professional services including technology consulting, application development, digital marketing, and related services. As these are primarily service-based engagements involving time, expertise, and resources, our refund policy reflects the nature of professional services.</p>
+
+  <h2>2. Refund Eligibility</h2>
+
+  <table class="scenario-table">
+    <thead>
+      <tr>
+        <th>Scenario</th>
+        <th>Refund</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Service not started after payment</td>
+        <td><span class="badge yes">Full Refund</span></td>
+        <td>100% refund if work has not commenced</td>
+      </tr>
+      <tr>
+        <td>Duplicate payment / billing error</td>
+        <td><span class="badge yes">Full Refund</span></td>
+        <td>Immediately refunded upon verification</td>
+      </tr>
+      <tr>
+        <td>Project cancelled before 50% completion</td>
+        <td><span class="badge partial">Partial Refund</span></td>
+        <td>Refund for unworked portion, minus costs incurred</td>
+      </tr>
+      <tr>
+        <td>Project cancelled after 50% completion</td>
+        <td><span class="badge no">No Refund</span></td>
+        <td>Significant resources already committed</td>
+      </tr>
+      <tr>
+        <td>Completed deliverables accepted by client</td>
+        <td><span class="badge no">No Refund</span></td>
+        <td>Work completed and accepted</td>
+      </tr>
+      <tr>
+        <td>Change of mind / direction change</td>
+        <td><span class="badge no">No Refund</span></td>
+        <td>Resources and time already allocated</td>
+      </tr>
+      <tr>
+        <td>Dissatisfaction with delivered work</td>
+        <td><span class="badge partial">Case-by-Case</span></td>
+        <td>We offer revisions first; see Section 4</td>
+      </tr>
+      <tr>
+        <td>Retainer / monthly service cancellation</td>
+        <td><span class="badge partial">Pro-rated</span></td>
+        <td>Unused days refunded with 7-day notice</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>3. Cancellation Policy</h2>
+  <p><strong>Project-based engagements:</strong> You may cancel a project at any time by written notice to <a href="mailto:info@frugalconsultancy.com" style="color:#1d4ed8;">info@frugalconsultancy.com</a>. The cancellation date is the date we receive your written notice. You will be billed for all work completed up to the cancellation date.</p>
+  <p><strong>Monthly retainers:</strong> Either party may cancel a monthly retainer with a minimum of 7 days' written notice before the next billing cycle. Cancellations with less than 7 days' notice will be charged for the following month.</p>
+  <p><strong>Consultation sessions:</strong> Free initial consultations may be cancelled at any time. Paid consultation sessions cancelled less than 24 hours in advance are non-refundable.</p>
+
+  <h2>4. Revision & Dispute Resolution</h2>
+  <p>We take quality seriously. Before a refund request is considered for completed work, we will:</p>
+  <ul>
+    <li>Review your concerns thoroughly within 3 business days</li>
+    <li>Offer reasonable revisions at no extra cost if the deliverable did not meet the agreed specifications</li>
+    <li>Work collaboratively to reach a satisfactory outcome</li>
+  </ul>
+  <p>If you are dissatisfied with any deliverable, please contact us within <strong>7 days of delivery</strong>. Concerns raised after this window may not be eligible for revision or refund.</p>
+
+  <h2>5. Refund Request Process</h2>
+  <div class="process-steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text">
+        <h4>Submit a Request</h4>
+        <p>Email us at <a href="mailto:info@frugalconsultancy.com" style="color:#1d4ed8;">info@frugalconsultancy.com</a> with your invoice number, reason for refund, and any supporting details.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text">
+        <h4>Review (3–5 Business Days)</h4>
+        <p>Our team will review your request against this policy and the terms of your engagement. We may request additional information.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-text">
+        <h4>Decision & Communication</h4>
+        <p>We will communicate our decision by email. If approved, we will confirm the refund amount and method.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-text">
+        <h4>Refund Processing (7–10 Business Days)</h4>
+        <p>Approved refunds are processed within 7–10 business days to the original payment method. International transfers may take additional time depending on your bank.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>6. International Payments</h2>
+  <p>We accept international payments via our payment gateway partners. For international refunds:</p>
+  <ul>
+    <li>Refunds are processed in the original currency of payment where possible</li>
+    <li>Currency conversion differences and bank charges are non-refundable</li>
+    <li>International wire transfer fees (if any) will be deducted from the refund amount</li>
+    <li>Processing time may be 10–15 business days for international transactions</li>
+    <li>Refunds are subject to compliance with applicable foreign exchange regulations under FEMA (India)</li>
+  </ul>
+
+  <h2>7. Non-Refundable Items</h2>
+  <p>The following are strictly non-refundable under all circumstances:</p>
+  <ul>
+    <li>Third-party costs incurred on your behalf (domain registrations, software licenses, advertising spend, API fees, etc.)</li>
+    <li>Work completed and accepted by the client</li>
+    <li>Rush or expedited service fees</li>
+    <li>Consulting hours that have been delivered</li>
+    <li>Payment gateway transaction fees charged by our payment processor</li>
+  </ul>
+
+  <h2>8. Amendments to This Policy</h2>
+  <p>We reserve the right to modify this Refund Policy at any time. Changes are effective immediately upon posting to our website. Your continued engagement with our services after changes constitutes acceptance of the updated policy. The policy in effect at the time of your payment governs your specific transaction.</p>
+
+  <h2>9. Governing Law</h2>
+  <p>This policy is governed by the laws of India. Any disputes arising from refund claims shall be subject to the exclusive jurisdiction of the courts in India. For international clients, we will make every reasonable effort to resolve disputes amicably before any legal proceedings.</p>
+
+  <div class="contact-box">
+    <h3>Need Help with a Refund?</h3>
+    <p>We aim to resolve all refund requests fairly and promptly. Please reach out to us directly — we'd rather fix the problem than lose a client.</p>
+    <p><strong>Frugal Consultancy Services Pvt Ltd</strong></p>
+    <p>Email: <a href="mailto:info@frugalconsultancy.com">info@frugalconsultancy.com</a></p>
+    <p>Website: <a href="https://www.frugalconsultancy.com">www.frugalconsultancy.com</a></p>
+    <p style="margin-top:10px;font-size:0.8rem;opacity:0.6;">Response time: Within 3 business days</p>
+  </div>
+</div>
+
+<footer>
+  © 2024 Frugal Consultancy Services Pvt Ltd &nbsp;|&nbsp;
+  <a href="index.html">Home</a> &nbsp;|&nbsp;
+  <a href="privacy-policy.html">Privacy Policy</a>
+</footer>
+
+</body>
+</html>
