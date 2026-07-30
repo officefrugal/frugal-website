@@ -16,13 +16,13 @@
     body { font-family: var(--font-body); color: var(--text); background: var(--white); line-height: 1.7; }
 
     nav {
-      background: var(--navy); padding: 18px 6vw;
+      background: white; padding: 18px 6vw; border-bottom: 1px solid var(--border);
       display: flex; align-items: center; justify-content: space-between;
     }
-    .nav-logo { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 700; color: white; text-decoration: none; }
-    .nav-logo span { color: var(--sky); }
-    .nav-back { font-size: 0.85rem; color: rgba(255,255,255,0.6); text-decoration: none; transition: color .2s; }
-    .nav-back:hover { color: white; }
+    .nav-logo { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 700; color: var(--navy); text-decoration: none; }
+    .nav-logo span { color: var(--accent); }
+    .nav-back { font-size: 0.85rem; color: var(--muted); text-decoration: none; transition: color .2s; }
+    .nav-back:hover { color: var(--navy); }
 
     .hero {
       background: linear-gradient(135deg, var(--navy), #1e3a8a);
